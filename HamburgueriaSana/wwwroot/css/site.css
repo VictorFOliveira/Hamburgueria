@@ -1,0 +1,163 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    justify-content: center;
+    align-items: center;
+    font-family: "roboto, mono";
+    background-color:black;
+}
+
+.background-image {
+    background-image: url('/img/restaurante-unplash.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.card {
+    padding: 15px;
+    box-shadow: 2px 4px 8px rgba(0, 0.8, 0.2, 0.8);
+    background-color: rgba(255, 255, 255, 0.6); /* Cor mais clara com opacidade para simular o efeito de vidro */
+    border-radius: 30px;
+    border: 2px solid orange;
+    transform: scale(1.0);
+    transition: transform 0.10s ease;
+    text-shadow: 1px 3px 1px black;
+}
+
+
+    .card h1 {
+        margin-top: 5px;
+        color: #fff; /* Cor do texto dentro do card */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao texto */
+        transition: text-shadow 0.10s ease; /* Adicione uma transição suave */
+    }
+
+.card-2 {
+    padding: 16px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.6); /* Ajuste a opacidade conforme desejado */
+    border: 2px;
+    margin-top: -100px;
+    width: 343px;
+    height: 300px;
+    box-shadow: 0 8px 16px rgba(200.2, 200.2, 200.2, 0.2); /* Ajuste a sombra conforme necessário */
+    transform: scale(1.00);
+    transition: transform 0.5s ease;
+    background-blend-mode: overlay;
+    text-align: left;
+}
+
+.custom-form-control {
+    max-width: 100%;
+    padding: 7px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: -15px;
+    transition: border-color 0.3s ease;
+    box-shadow: 1px 15px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo com opacidade para simular o efeito de vidro */
+}
+
+.background-image2 {
+    background-image: url('/img/restaurante-2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    background-color: black;
+}
+
+.card-2:hover {
+    transform: scale(1.1); /* Aumenta a escala no hover para dar um efeito de "salto" */
+}
+
+.custom-form-control:focus {
+    border-color: #ffc107; /* Adicione uma cor de destaque quando focado */
+    outline: none;
+}
+
+.btn-link {
+    color: black; /* Cor para links */
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+    .btn-link:hover {
+        color: blue; /* Cor para links ao passar o mouse */
+    }
+
+.btn-outline-warning {
+    color: #ffc107;
+    border-color: yellow;
+}
+
+    .btn-outline-warning:hover {
+        color: #fff;
+        background-color: #ffc107;
+        border-color: greenyellow;
+        box-shadow: 1px 20px 3px rgba(0, 0, 0, 0.2);
+    }
+
+.vertical-line {
+    border-left: 3px solid white; /* Adiciona uma linha vertical à esquerda */
+    height: 100%; /* Preenche a altura total do container */
+    margin-left: 30px; /* Ajuste a margem conforme necessário */
+}
+
+.transparent-input {
+    background-color: transparent; /* Torna a caixa de input transparente */
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 95%;
+    box-sizing: border-box;
+    margin-bottom: -10px;
+    transition: border-color 0.3s ease;
+}
+
+    .transparent-input:focus {
+        border-color: orange; /* Adicione uma cor de destaque quando focado */
+        outline: white;
+    }
+
+    .transparent-input::placeholder {
+        color: rgba(0, 0, 0, 0.2); /* Altere para a cor desejada */
+    }
+
+    .transparent-input:focus::placeholder {
+        color: black; /* Altere para a cor desejada quando focado */
+    }
+
+.icon-container {
+    margin-left: 10px; /* Adapte o valor conforme necessário para ajustar o afastamento do ícone */
+    display: inline-block;
+}
