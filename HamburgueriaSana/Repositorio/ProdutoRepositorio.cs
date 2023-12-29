@@ -1,5 +1,6 @@
 ﻿using HamburgueriaSana.Data;
 using HamburgueriaSana.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HamburgueriaSana.Repositorio
 {
@@ -18,9 +19,9 @@ namespace HamburgueriaSana.Repositorio
             return produto;
 
         }
-        public ProdutoModel ListarProdutosPorId(int id)
+        public List<ProdutoModel> BuscarTodos()
         {
-            return _db.Produto.FirstOrDefault(x => x.ProdutoId == id);
+            return _db.Produto.ToList();
         }
 
         public ProdutoModel Remover(ProdutoModel produto)

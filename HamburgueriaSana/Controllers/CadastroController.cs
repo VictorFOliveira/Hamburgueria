@@ -8,7 +8,6 @@ namespace HamburgueriaSana.Controllers
     {
         private readonly IprodutoRepositorio _produtoRepositorio;
 
-
         public CadastroController(IprodutoRepositorio produtoRepositorio)
         {
             _produtoRepositorio = produtoRepositorio;
@@ -17,6 +16,7 @@ namespace HamburgueriaSana.Controllers
         {
             return View();
         }
+
 
         public IActionResult Criar()
         {
@@ -41,6 +41,12 @@ namespace HamburgueriaSana.Controllers
                 TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar o seu produto, tente novamente. Detalhes do erro{erro}";
                 return RedirectToAction("Index");
             }
+        }
+
+        public IActionResult Listar()
+        {
+            List<ProdutoModel> produtos = _produtoRepositorio.BuscarTodos();
+            return View(produtos);
         }
     }
 }
