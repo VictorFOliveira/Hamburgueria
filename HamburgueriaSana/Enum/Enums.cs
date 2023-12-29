@@ -6,6 +6,5 @@
         Administrador = 1,
         Atendente = 2,
         Cozinha = 3
-
     }
 }
