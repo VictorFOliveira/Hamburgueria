@@ -48,5 +48,13 @@ namespace HamburgueriaSana.Controllers
             List<ProdutoModel> produtos = _produtoRepositorio.BuscarTodos();
             return View(produtos);
         }
+
+        public IActionResult Editar()
+        {
+
+            ProdutoModel produtos = _produtoRepositorio.ListarPorId(id);
+            return View(contatos);
+
+        }
     }
 }

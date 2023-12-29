@@ -7,6 +7,7 @@ namespace HamburgueriaSana.Repositorio
         ProdutoModel Adicionar(ProdutoModel produto);
         ProdutoModel Remover(ProdutoModel produto);
         List<ProdutoModel>  BuscarTodos();
+        ProdutoModel ListarPorId();
 
     }
 }

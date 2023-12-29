@@ -24,6 +24,11 @@ namespace HamburgueriaSana.Repositorio
             return _db.Produto.ToList();
         }
 
+        public ProdutoModel ListarPorId(int id)
+        {
+                return _db.Produto.FirstOrDefault(x => x.ProdutoId == id);   
+        }
+
         public ProdutoModel Remover(ProdutoModel produto)
         {
             _db.Produto.Remove(produto);
