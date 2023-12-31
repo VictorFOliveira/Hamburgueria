@@ -17,7 +17,6 @@ namespace HamburgueriaSana.Controllers
             return View();
         }
 
-
         public IActionResult Criar()
         {
             return View();
@@ -49,12 +48,59 @@ namespace HamburgueriaSana.Controllers
             return View(produtos);
         }
 
-        public IActionResult Editar()
+
+        public IActionResult Editar(int id)
         {
+            ProdutoModel produto = _produtoRepositorio.ListarPorId(id);
+            return View(produto);
+        }
 
-            ProdutoModel produtos = _produtoRepositorio.ListarPorId(id);
-            return View(contatos);
+        [HttpPost]
+        public IActionResult Alterar(ProdutoModel produto)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _produtoRepositorio.Atualizar(produto);
+                    TempData["MensagemSucesso"] = "Produto Atualizado com sucesso";
+                    return RedirectToAction("Listar");
+                }
+                return View(produto);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos alterar seu produto, tente novamente. Detalhes do erro: {erro}";
+                return RedirectToAction("Listar");
+            }
+        }
 
+        public IActionResult ApagarConfirmacao(int id)
+        {
+            ProdutoModel produto = _produtoRepositorio.ListarPorId(id);
+            return View(produto);
+        }
+
+        public IActionResult Apagar(int id)
+        {
+            try
+            {
+                bool apagado = _produtoRepositorio.Apagar(id);
+                if (apagado)
+                {
+                    TempData["MensagemSucesso"] = "Produto apagado com sucesso";
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Ops, Não conseguimos apagar seu produto";
+                }
+                return RedirectToAction("Listar");
+            }
+            catch(System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"ops, não conseguimos apagar seu contato. Tente novamente. Detalhes do erro: {erro}";
+                return RedirectToAction("Listar");
+            }
         }
     }
 }

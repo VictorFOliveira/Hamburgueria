@@ -22,8 +22,17 @@
 
     public enum ContaMesa
     {
-        SemPedido = 0,
-        PendentePagamento = 1,
-        Pago = 2
+        PendentePagamento = 0,
+        Pago = 1
     }
+
+    public enum FormaPagamento
+    {
+        Dinheiro = 0,
+        Debito = 1,
+        Credito = 2,
+        Pix = 3,
+        ValeRefeicao = 4
+    }
+
 }
